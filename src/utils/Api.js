@@ -1,7 +1,7 @@
 class Api {
-    constructor(options) {
-        this._url = options.addres;
-        this._token = options.token;
+    constructor({ address, token }) {
+        this._url = address;
+        this._token = token;
     }
 
 _getResponseData(res) {
@@ -18,10 +18,8 @@ _getResponseData(res) {
       },
     })
     .then(this._getResponseData)
-
 }
 
-//Получил с сервера карточки
 getInitialCards() {
     return fetch(`${this._url}/cards`, {
       headers: {
@@ -104,11 +102,9 @@ addCard(name, link) {
   }
 }
 
-const api = new Api({
-  url: `https://mesto.nomoreparties.co/v1/cohort-24`,
-  headers: {
-      authorization: '22c6286b-d5fa-40bf-b483-a71816fa51e0',
-      'Content-Type': 'application/json',
-  }
-});
+const config = {
+  address: "https://mesto.nomoreparties.co/v1/cohort-24",
+  token: "f12d97c5-3bd7-4a64-bc24-17e685180ee0"
+};
+const api = new Api(config);
 export default api;

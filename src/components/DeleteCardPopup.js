@@ -4,11 +4,11 @@ import PopupWithForm from './PopupWithForm';
 function DeleteCardPopup(props) {
     return (
         <PopupWithForm
-        isOpen={props.isOpen}
-        onClose={props.onClose}
-        name='delete'
-        title='Вы уверены?'
-        buttonText='Да'
+            isOpen={props.isOpen}
+            onClose={props.onClose}
+            name='delete'
+            title='Вы уверены?'
+            buttonText='Да'
        >
         </PopupWithForm>
     );
