@@ -1,11 +1,11 @@
 import React from "react";
-import api from '../utils/Api';
+import api from '../utils/api';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import ImagePopup from './ImagePopup';
 import EditProfilePopup from "./EditProfilePopup";
-import AddCardPopup from "./AddCardPopup";
+import AddPlacePopup from "./AddPlacePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import DeleteCardPopup from "./DeleteCardPopup";
 
@@ -17,7 +17,7 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState(null);
   const [isEditAvatarPopup, setIsEditAvatarPopup] = React.useState(false);
   const [isEditProfilePopup, setIsEditProfilePopup] = React.useState(false);
-  const [isAddCardPopup, setIsAddCardPopup] = React.useState(false);
+  const [isAddPlacePopup, setIsAddPlacePopup] = React.useState(false);
   const [isDeleteCardPopup, setIsDeleteCardPopup] = React.useState(false);
   const [cards, setCards] = React.useState([]);
 
@@ -43,7 +43,7 @@ function handleEditProfileClick() {
 }
 
 function handleAddPlaceClick() {
-  setIsAddCardPopup(true);
+  setIsAddPlacePopup(true);
 }
 
 function handleCardDeleteClick(card) {
@@ -111,7 +111,7 @@ function closeAllPopups() {
   setSelectedCard(null)
   setIsEditAvatarPopup(false)
   setIsEditProfilePopup(false)
-  setIsAddCardPopup(false)
+  setIsAddPlacePopup(false)
   setIsDeleteCardPopup(false)
 }
 
@@ -133,7 +133,7 @@ function closeAllPopups() {
         <ImagePopup card={selectedCard !== null && selectedCard} onClose={closeAllPopups}/>
         <EditAvatarPopup isOpen={isEditAvatarPopup} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar}/>
         <EditProfilePopup isOpen={isEditProfilePopup} onClose={closeAllPopups} onUpdateUser={handleUpdateUser}/>
-        <AddCardPopup isOpen={isAddCardPopup} onClose={closeAllPopups} onAddPlace={handleAddPlaceSubmit}/>
+        <AddPlacePopup isOpen={isAddPlacePopup} onClose={closeAllPopups} onAddPlace={handleAddPlaceSubmit}/>
         <DeleteCardPopup isOpen={isDeleteCardPopup} onClose={closeAllPopups} onCardDelete={handleCardDelete} />
       </div>
     </div>
