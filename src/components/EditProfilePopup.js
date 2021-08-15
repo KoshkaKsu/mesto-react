@@ -26,7 +26,6 @@ function EditProfilePopup(props) {
             name: name,
             about: description,
         });
-        e.target.value = "";
     }
 
     return (

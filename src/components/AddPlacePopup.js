@@ -19,7 +19,8 @@ function AddPlacePopup(props) {
             name: name,
             link: link,
         });
-        e.target.reset();
+        setName('');
+        setLink('');
     }
 
     return (
